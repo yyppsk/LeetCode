@@ -32,9 +32,37 @@ int specialArray(vector<int> &nums)
     }
     return -1;
 }
+int binarysearch(vector<int> &nums, int target)
+{
+    int start = 0, end = nums.size();
+    while (start < end)
+    {
+        int mid = start + (end - start) / 2;
+        if (nums[mid] >= target)
+            start = mid;
+        else
+            end = mid;
+    }
+}
+int specialArraysol2(vector<int> &nums)
+{
+    sort(nums.begin(), nums.end());
+    for (auto x : nums)
+    {
+        cout << x << " ";
+    }
+    // loop for each number
+    for (int i = 0; i < nums.size(); i++)
+    {
+        int index = binarysearch(nums, i);
+        cout << "Indexes for " << i << " " << index << endl;
+    }
+    return 0;
+    // Binary Search
+}
 int main()
 {
     vector<int> arr = {0, 4, 3, 0, 4};
-    cout << specialArray(arr);
+    cout << specialArraysol2(arr);
     return 0;
 }
