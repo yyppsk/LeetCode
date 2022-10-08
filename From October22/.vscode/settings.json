@@ -11,6 +11,7 @@
     "map": "cpp",
     "list": "cpp",
     "xhash": "cpp",
-    "xstring": "cpp"
+    "xstring": "cpp",
+    "string": "cpp"
   }
 }
