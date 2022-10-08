@@ -6,6 +6,11 @@
     "utility": "cpp",
     "ostream": "cpp",
     "algorithm": "cpp",
-    "limits": "cpp"
+    "limits": "cpp",
+    "xtree": "cpp",
+    "map": "cpp",
+    "list": "cpp",
+    "xhash": "cpp",
+    "xstring": "cpp"
   }
 }
