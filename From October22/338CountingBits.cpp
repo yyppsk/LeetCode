@@ -18,15 +18,15 @@ vector<int> countBits(int divident)
     }
     res.push_back(1);
     reverse(res.begin(), res.end());
+    return res;
+}
+int main()
+{
+    int n = 2;
+    vector<int> res = countBits(n);
     for (auto i : res)
     {
         cout << i << " ";
     }
-    return {};
-}
-int main()
-{
-    int n = 100;
-    countBits(n);
     return 0;
 }
