@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <string>
+#include <unordered_map>
 using namespace std;
 int numRescueBoats(vector<int> &people, int limit)
 {
@@ -25,10 +26,32 @@ int numRescueBoats(vector<int> &people, int limit)
     }
     return count;
 }
-5 int main()
+int numRescueBoats2(vector<int> &people, int limit)
+{
+    int boat = 0;
+    unordered_map<int, int> map;
+    for (auto i : people)
+    {
+        map[i]++;
+    }
+    for (auto i : people)
+    {
+        for (auto i : map)
+        {
+            cout << i.first << ":" << i.second << endl;
+        }
+        if (map.find(limit - i) != map.end() && (map.at(limit - i) != 0))
+        {
+            --map[limit - i];
+            boat++;
+        }
+    }
+    return boat;
+}
+int main()
 {
     vector<int> people = {3, 2, 2, 1};
     int limit = 3;
-    cout << numRescueBoats(people, limit);
+    cout << numRescueBoats2(people, limit);
     return 0;
 }
