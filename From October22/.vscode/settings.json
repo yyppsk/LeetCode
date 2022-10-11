@@ -12,6 +12,7 @@
     "list": "cpp",
     "xhash": "cpp",
     "xstring": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "queue": "cpp"
   }
 }
