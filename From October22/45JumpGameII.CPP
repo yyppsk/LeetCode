@@ -25,6 +25,10 @@ int jump(vector<int> &nums)
 
     return dp[0];
 }
+int jumpgreedy(vector<int> &nums)
+{
+    
+}
 int main()
 {
     vector<int> nums = {2, 3, 1, 1, 4};
