@@ -1,3 +1,1 @@
-
-    }
-    else
+maxa = max(window, maxa);
