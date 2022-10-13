@@ -1,1 +1,1 @@
-david
+&& (!atrate)

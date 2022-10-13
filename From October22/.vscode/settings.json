@@ -13,6 +13,7 @@
     "xhash": "cpp",
     "xstring": "cpp",
     "string": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "unordered_set": "cpp"
   }
 }
