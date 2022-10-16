@@ -2,34 +2,27 @@
 #include <vector>
 #include <unordered_map>
 #include <algorithm>
+#include <sstream>
 #include <string>
 using namespace std;
 bool wordPattern(string pattern, string s)
 {
-    unordered_map<char, string> mapp;
-    string str = "";
-    vector<string> res;
-    s.push_back(' ');
-    int j = 0;
-    for (int i = 0; i < s.size(); i++)
+    unordered_map<char, int> p2i;
+    unordered_map<string, int> w2i;
+
+    istringstream in(s);
+    string word;
+    int i = 0, n = pattern.size();
+
+    for (word; in >> word; i++)
     {
-        str += s[i];
-        if (s[i] == ' ')
-        {
-            mapp[pattern[j]] = str;
-            res.push_back(str);
-            str = "";
-        }
+        cout << p2i[pattern[i]] << "!=" << w2i[word] << endl;
+        if (i == n || p2i[pattern[i]] != w2i[word])
+            return false; // If it reaches end before all the words in string 's' are traversed || if values of keys : pattern[i] & word don't match return false
+
+        p2i[pattern[i]] = w2i[word] = i + 1; // Otherwise map to both to a value i+1
     }
-    for (auto i : res)
-    {
-        cout << i << " " << endl;
-    }
-    for (auto i : mapp)
-    {
-        cout << i.first << " : " << i.second << endl;
-    }
-    return 0;
+    return i == n; // both the lengths should be equal
 }
 int main()
 {
