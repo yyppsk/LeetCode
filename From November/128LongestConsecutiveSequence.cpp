@@ -7,6 +7,7 @@
 using namespace std;
 int longestConsecutive(vector<int> &nums)
 {
+    //Edge case return 0 for [] Empty Input
     set<int> hashset;
     for (int num : nums)
     {
