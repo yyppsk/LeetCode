@@ -6,6 +6,8 @@
     "xstring": "cpp",
     "stack": "cpp",
     "vector": "cpp",
-    "xutility": "cpp"
+    "xutility": "cpp",
+    "deque": "cpp",
+    "list": "cpp"
   }
 }
