@@ -10,6 +10,7 @@
     "deque": "cpp",
     "list": "cpp",
     "string": "cpp",
-    "unordered_map": "cpp"
+    "unordered_map": "cpp",
+    "utility": "cpp"
   }
 }
