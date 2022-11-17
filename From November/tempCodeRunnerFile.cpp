@@ -1,1 +1,1 @@
- st.push(s[i]);
+cout << "Min index " << minn << endl;
