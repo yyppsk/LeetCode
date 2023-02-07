@@ -4,13 +4,14 @@
 #include <stack>
 #include <string>
 using namespace std;
-string removeDuplicates(string s, int k)
-{
-    pair<int, string> p;
-}
 int main()
 {
-    
-    removeDuplicates()
+    vector<int> dig = {1, 2, 3};
+    string b = "";
+    for (auto i : dig)
+    {
+        b.push_back(i);
+    }
+    cout << b << endl;
     return 0;
 }
