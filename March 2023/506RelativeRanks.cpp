@@ -3,9 +3,8 @@
 #include <algorithm>
 #include <string>
 using namespace std;
-void solve()
+vector<string> findRelativeRanks(vector<int> &score)
 {
-    
 }
 int main()
 {
