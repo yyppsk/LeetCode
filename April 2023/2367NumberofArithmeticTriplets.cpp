@@ -5,7 +5,8 @@
 using namespace std;
 int arithmeticTriplets(vector<int> &nums, int diff)
 {
-    // exploit the property that the arr is increasing
+    // https://www.youtube.com/watch?v=5z971BdJ9-k
+    //  exploit the property that the arr is increasing
     int cnt[201] = {}, res = 0;
     for (auto n : nums)
     {
