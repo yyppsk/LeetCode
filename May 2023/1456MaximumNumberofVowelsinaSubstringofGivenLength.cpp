@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <string>
+#include <queue>
 using namespace std;
 bool isvowel(char c)
 {
@@ -9,6 +10,7 @@ bool isvowel(char c)
 }
 int maxVowels(string s, int k)
 {
+    //Kadane & Sliding Window
     int count = 0;
     for (int i = 0; i < k; i++)
     {
@@ -23,10 +25,28 @@ int maxVowels(string s, int k)
         maxcount = max(maxcount, count);
     }
     return maxcount;
+    //Queue
+    deque<int> dq;
+    int count = 0;
+    for (int i = 0; i < k; i++)
+    {
+        count += isvowel(s[i]);
+        dq.push_back(s[i]);
+    }
+    int maxcount = count;
+    for (int i = k; i < s.size(); i++)
+    {
+        dq.push_back(s[i]);
+        count += isvowel(dq.back());
+        count -= isvowel(dq.front());
+        dq.pop_front();
+        maxcount = max(maxcount, count);
+    }
+    return maxcount;
 }
 int main()
 {
-    string s = "leetcode";
+    string s = "ieetcode";
     int k = 3;
     cout << maxVowels(s, k);
     return 0;
