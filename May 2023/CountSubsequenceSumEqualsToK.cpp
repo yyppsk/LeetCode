@@ -5,6 +5,9 @@
 using namespace std;
 int CountSub(int idx, int arr[], int k, int sum, int n)
 {
+    //only if the array has all the positives
+    if (sum > k)
+        return 0;
     if (idx == n)
     {
         if (sum == k)
