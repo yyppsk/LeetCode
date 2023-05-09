@@ -42,9 +42,7 @@ long long findTheArrayConcVal(vector<int> &nums)
         }
         long long last = nums[end];
         cout << "F: " << first << " last : " << last << endl;
-        string calc = convert(first, last);
-        cout << "Calc : " << calc << endl;
-        sum += fast_atoi(calc);
+        sum += fast_atoi(convert(first, last));
         cout << "Sum : " << sum << endl;
         start++, end--;
     }
