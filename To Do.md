@@ -13,7 +13,7 @@
     1 0 0 1 0 1   5 Index will take 5 steps
     -----------------------------------
     0 1 2 3 4 5 6
-
+    `11
     Intution pile up at middle of window
     Prefix sum
 821
