@@ -1,1 +1,1 @@
-start
+cout << pairSum(current);
