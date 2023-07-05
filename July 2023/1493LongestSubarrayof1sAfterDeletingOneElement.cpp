@@ -3,8 +3,44 @@
 #include <algorithm>
 #include <string>
 using namespace std;
-int n;
+
+// Solution 3
+int longestSubarray(vector<int> &nums)
+{
+    // Keeps
+    int lastSeenZero = -1, result = 0, i = 0, j = 0;
+    while (j < nums.size())
+    {
+        if (nums[j] == 0)
+        {
+            i = lastSeenZero + 1;
+            lastSeenZero = j;
+        }
+        result = max(result, j - i);
+        j++;
+    }
+
+    return result;
+}
 // Solution 2
+int longestSubarray2(vector<int> &nums)
+{
+    int zero = 0, result = INT_MIN, i = 0;
+    for (int j = 0; j < nums.size(); j++)
+    {
+        if (nums[j] == 0)
+            zero++;
+        while (zero > 1)
+        {
+            if (nums[i] == 0)
+                zero--;
+            i++;
+        }
+        result = max(result, j - i);
+    }
+    return result;
+}
+int n;
 //  Solution 1
 /*
 int findMax(vector<int> &nums, int skip)
