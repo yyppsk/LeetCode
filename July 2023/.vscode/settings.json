@@ -2,6 +2,16 @@
   "files.associations": {
     "iostream": "cpp",
     "ostream": "cpp",
-    "functional": "cpp"
+    "functional": "cpp",
+    "array": "cpp",
+    "string_view": "cpp",
+    "initializer_list": "cpp",
+    "ranges": "cpp",
+    "utility": "cpp",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp"
   }
 }
