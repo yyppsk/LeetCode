@@ -4,29 +4,36 @@
 #include <string>
 #include <stack>
 using namespace std;
-int maxDepth(string s)
+string removeOuterParentheses(string s)
 {
-    // stack<int> st;
-    int current = 0;
-    int DepthMax = 0;
-
+    int count = 0;
+    string result = "";
     for (int i = 0; i < s.size(); i++)
     {
-        if (s[i] == '(')
+        if (s[i] == '(' && count == 0)
         {
-            current++;
+            count++;
         }
-        else if (s[i] == ')')
+        else if (s[i] == '(' && count > 1)
         {
-            DepthMax = max(DepthMax, current);
-            current--;
+            count++;
+            result += s[i];
+        }
+        else if (s[i] == ')' && count == 1)
+        {
+            count--;
+        }
+        else if (s[i] == ')' && count > 1)
+        {
+            result += s[i];
+            count--;
         }
     }
-    return DepthMax;
+    return result;
 }
 int main()
 {
-    string s = "(1)+((2))+(((3)))";
-    cout << maxDepth(s);
+    string s = "(()())(())";
+    cout << removeOuterParentheses(s);
     return 0;
 }
