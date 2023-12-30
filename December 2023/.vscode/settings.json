@@ -5,6 +5,7 @@
     "iostream": "cpp",
     "ostream": "cpp",
     "cmath": "cpp",
-    "compare": "cpp"
+    "compare": "cpp",
+    "unordered_map": "cpp"
   }
 }
