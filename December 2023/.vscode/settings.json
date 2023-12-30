@@ -4,6 +4,7 @@
     "unordered_set": "cpp",
     "iostream": "cpp",
     "ostream": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "compare": "cpp"
   }
 }
