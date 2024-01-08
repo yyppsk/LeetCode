@@ -3,64 +3,37 @@
 #include <algorithm>
 #include <string>
 using namespace std;
-// Recursive Approach
-int countSlicesRecursive(vector<int> &nums, int end)
+int numberOfArithmeticSlices1(vector<int> &nums)
 {
-    if (end < 2)
-    {
-        return 0;
-    }
+    int n = nums.size();
+    int currentSliceLength = 2;
+    int totalArithmeticSlices = 0;
 
-    int count = 0;
-    for (int start = 0; start < end - 1; start++)
+    for (int i = 2; i < n; ++i)
     {
-        if (nums[end] - nums[end - 1] == nums[end - 1] - nums[start])
+        int prevDiff = nums[i - 1] - nums[i - 2];
+        int currentDiff = nums[i] - nums[i - 1];
+
+        if (prevDiff == currentDiff)
         {
-            count += 1 + countSlicesRecursive(nums, start);
+            // The sequence continues, so increment the current slice length
+            ++currentSliceLength;
+        }
+        else
+        {
+            // The sequence is broken, reset the current slice length to 2
+            currentSliceLength = 2;
+        }
+
+        // If the current slice length is 3 or more, contribute to the count
+        if (currentSliceLength >= 3)
+        {
+            totalArithmeticSlices += (currentSliceLength - 2);
         }
     }
 
-    return count;
+    return totalArithmeticSlices;
 }
-
-int numberOfArithmeticSlicesRecursive(vector<int> &nums)
-{
-    int n = nums.size();
-    return countSlicesRecursive(nums, n - 1);
-}
-//      Top -  Down Dynamic Programming Approach
-int countSlicesTopDown(vector<int> &nums, int end, vector<int> &dp)
-{
-    if (end < 2)
-    {
-        return 0;
-    }
-
-    if (dp[end] != -1)
-    {
-        return dp[end];
-    }
-
-    int count = 0;
-    for (int start = 0; start < end - 1; start++)
-    {
-        if (nums[end] - nums[end - 1] == nums[end - 1] - nums[start])
-        {
-            count += 1 + countSlicesTopDown(nums, start, dp);
-        }
-    }
-
-    dp[end] = count;
-    return count;
-}
-
-int numberOfArithmeticSlicesTopDown(vector<int> &nums)
-{
-    int n = nums.size();
-    vector<int> dp(n, -1);
-    return countSlicesTopDown(nums, n - 1, dp);
-}
-
 // Bottom-Up Dynamic Programming Approach with Space Optimization:
 
 int numberOfArithmeticSlicesBottomUp(vector<int> &nums)
