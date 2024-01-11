@@ -65,6 +65,6 @@ public:
 int main()
 {
     cout << endl;
-    cout << sortSentence("is2 sentence4 This1 a3");
+    // cout << sortSentence("is2 sentence4 This1 a3");
     return 0;
 }
