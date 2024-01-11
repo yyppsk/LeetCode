@@ -32,7 +32,6 @@ public:
         return partitions;
     }
 };
-}
 int main()
 {
     return 0;
