@@ -31,6 +31,12 @@ public:
         }
         return res;
     }
+    vector<vector<int>> sortTheStudentsLamda(vector<vector<int>> &A, int k)
+    {
+        sort(A.begin(), A.end(), [&](auto const &a, auto const &b)
+             { return a[k] > b[k]; });
+        return A;
+    }
 };
 int main()
 {
