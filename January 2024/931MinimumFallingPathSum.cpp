@@ -46,6 +46,49 @@ private:
         return memo[row][col] = minSum;
     }
 };
+
+class Solution2
+{
+public:
+    int minFallingPathSum(vector<vector<int>> &matrix)
+    {
+        int n = matrix.size();
+        vector<vector<int>> copy(n, vector<int>(n));
+
+        for (int col = 0; col < n; col++)
+        {
+            copy[0][col] = matrix[0][col];
+        }
+
+        for (int row = 1; row < n; row++)
+        {
+            for (int col = 0; col < n; col++)
+            {
+
+                int leftDiagonal = INT_MAX;
+                int rightDiagonal = INT_MAX;
+
+                if (col - 1 >= 0)
+                    leftDiagonal = copy[row - 1][col - 1];
+
+                int aboveRow = copy[row - 1][col];
+
+                if (col + 1 < n)
+                    rightDiagonal = copy[row - 1][col + 1];
+
+                copy[row][col] = matrix[row][col] +
+                                 min({leftDiagonal, aboveRow, rightDiagonal});
+            }
+        }
+
+        int res = INT_MAX;
+        for (int col = 0; col < n; col++)
+        {
+            res = min(res, copy[n - 1][col]);
+        }
+        return res;
+    }
+};
 int main()
 {
     return 0;
