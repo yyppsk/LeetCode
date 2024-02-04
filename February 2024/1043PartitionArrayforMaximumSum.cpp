@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution
@@ -48,6 +46,39 @@ int maxSumAfterPartitioningHelper(vector<int> &arr, int k, int idx)
 
     return maxSum;
 }
+
+class SolutionMemoization
+{
+public:
+    int n;
+    int mem[501];
+    int maxSumAfterPartitioning(vector<int> &arr, int k)
+    {
+        n = arr.size();
+        memset(mem, -1, sizeof(mem));
+        return solve(0, arr, k);
+    }
+
+private:
+    int solve(int idx, vector<int> &arr, int k)
+    {
+        if (idx >= n)
+            return 0;
+        if (mem[idx] != -1)
+        {
+            return mem[idx];
+        }
+        int result = 0;
+        int maxcurrent = -1;
+        for (int j = idx; j < n && j - idx + 1 <= k; j++)
+        {
+            maxcurrent = max(maxcurrent, arr[j]);
+
+            result = max((j - idx + 1) * maxcurrent + solve(j + 1, arr, k), result);
+        }
+        return mem[idx] = result;
+    }
+};
 
 int maxSumAfterPartitioning(vector<int> &arr, int k)
 {
