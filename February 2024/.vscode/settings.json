@@ -2,6 +2,17 @@
   "files.associations": {
     "ostream": "cpp",
     "iostream": "cpp",
-    "functional": "cpp"
+    "functional": "cpp",
+    "array": "cpp",
+    "bitset": "cpp",
+    "string_view": "cpp",
+    "initializer_list": "cpp",
+    "ranges": "cpp",
+    "span": "cpp",
+    "regex": "cpp",
+    "utility": "cpp",
+    "valarray": "cpp",
+    "chrono": "cpp",
+    "algorithm": "cpp"
   }
 }
