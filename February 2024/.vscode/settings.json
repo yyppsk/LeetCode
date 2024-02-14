@@ -13,6 +13,7 @@
     "utility": "cpp",
     "valarray": "cpp",
     "chrono": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "queue": "cpp"
   }
 }
