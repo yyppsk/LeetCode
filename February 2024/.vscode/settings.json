@@ -14,6 +14,7 @@
     "valarray": "cpp",
     "chrono": "cpp",
     "algorithm": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "unordered_map": "cpp"
   }
 }
