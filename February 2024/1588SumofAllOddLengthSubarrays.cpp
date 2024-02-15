@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// https://www.youtube.com/watch?v=J5IIH35EBVE
 int sumOddLengthSubarrays(vector<int> arr)
 {
     int n = arr.size();
