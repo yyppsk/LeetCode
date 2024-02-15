@@ -16,6 +16,7 @@
     "algorithm": "cpp",
     "queue": "cpp",
     "unordered_map": "cpp",
-    "ratio": "cpp"
+    "ratio": "cpp",
+    "cmath": "cpp"
   }
 }
