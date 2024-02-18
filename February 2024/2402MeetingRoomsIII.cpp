@@ -1,6 +1,70 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class Solution
+{
+public:
+    int mostBooked(int n, vector<vector<int>> &meetings)
+    {
+        sort(meetings.begin(), meetings.end());
+
+        priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> usedRooms;
+
+        priority_queue<int, vector<int>, greater<int>> availableRooms;
+
+        vector<int> roomsCount(n, 0);
+
+        for (int room = 0; room < n; room++)
+        {
+            availableRooms.push(room);
+        }
+
+        for (vector<int> &meet : meetings)
+        {
+            int start = meet[0];
+            int end = meet[1];
+
+            int duration = end - start;
+
+            while (!usedRooms.empty() && start >= usedRooms.top().first)
+            {
+                int unusedRoomNumber = usedRooms.top().second;
+                availableRooms.push(unusedRoomNumber);
+                usedRooms.pop();
+            }
+
+            if (!availableRooms.empty())
+            {
+                int availableRoomNumber = availableRooms.top();
+                roomsCount[availableRoomNumber]++;
+                usedRooms.push({end, availableRoomNumber});
+                availableRooms.pop();
+            }
+            else
+            {
+                // ab wait krna pdega or Delay ayga
+                int earliestRoomAvailable = usedRooms.top().second;
+                long long earliestRoomEndTime = usedRooms.top().first;
+                usedRooms.pop();
+                usedRooms.push({earliestRoomEndTime + duration, earliestRoomAvailable});
+                roomsCount[earliestRoomAvailable]++;
+            }
+        }
+
+        int resultRoom = -1;
+        int maxUse = 0;
+
+        for (int room = 0; room < n; room++)
+        {
+            if (roomsCount[room] > maxUse)
+            {
+                maxUse = roomsCount[room];
+                resultRoom = room;
+            }
+        }
+        return resultRoom;
+    }
+};
 int mostBooked(int n, vector<vector<int>> &meetings)
 {
     sort(meetings.begin(), meetings.end());
@@ -55,6 +119,7 @@ int mostBooked(int n, vector<vector<int>> &meetings)
 
     return resultRoom;
 }
+
 int main()
 {
     return 0;
