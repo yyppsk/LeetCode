@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    ".env*": "dotenv",
     "ostream": "cpp",
     "iostream": "cpp",
     "functional": "cpp",
@@ -17,6 +18,12 @@
     "queue": "cpp",
     "unordered_map": "cpp",
     "ratio": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "deque": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp"
   }
 }
