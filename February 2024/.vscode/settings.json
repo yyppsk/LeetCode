@@ -25,6 +25,7 @@
     "string": "cpp",
     "unordered_set": "cpp",
     "vector": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "random": "cpp"
   }
 }
