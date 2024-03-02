@@ -17,7 +17,7 @@ Solutions of LeetCode problems that I solve on the frequent basis. Updating it r
 <a href="https://instagram.com/1yyppsk" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="1yyppsk" height="30" width="40" /></a>
 <a href="https://hashnode.com/@yyppsk" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hashnode.svg" alt="@yyppsk" height="30" width="40" /></a>
 <a href="https://www.hackerrank.com/yyppsk" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="yyppsk" height="30" width="40" /></a>
-<a href="https://codeforces.com/profile/yyppsk" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codeforces.svg" alt="yyppsk" height="30" width="40" /></a>
+
 <a href="https://www.leetcode.com/yyppsk" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="yyppsk" height="30" width="40" /></a>
 <a href="https://auth.geeksforgeeks.org/user/pranjalpratapsingh1/profile" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/geeks-for-geeks.svg" alt="pranjalpratapsingh1/profile" height="30" width="40" /></a>
 </p>
