@@ -34,6 +34,51 @@ ListNode *createLinkedList(const std::vector<int> &values)
     return head;
 }
 
+vector<int> nodesBetweenCriticalPointsShort(ListNode *head)
+{
+    if (!head || !head->next || !head->next->next)
+    {
+        return {-1, -1};
+    }
+
+    ListNode *curr = head->next;
+    ListNode *prev = head;
+    int currentIndex = 1; // Start from the second node
+    int criticalPoint = -1;
+    int minDistance = INT_MAX;
+    int firstCriticalPoint = -1, lastCriticalPoint = -1;
+
+    while (curr->next != nullptr)
+    {
+        if ((curr->val > prev->val && curr->val > curr->next->val) ||
+            (curr->val < prev->val && curr->val < curr->next->val))
+        {
+            if (firstCriticalPoint == -1)
+            {
+                firstCriticalPoint = currentIndex;
+            }
+            else
+            {
+                minDistance = min(minDistance, currentIndex - criticalPoint);
+            }
+
+            criticalPoint = currentIndex;
+            lastCriticalPoint = currentIndex;
+        }
+
+        prev = curr;
+        curr = curr->next;
+        currentIndex++;
+    }
+
+    if (minDistance == INT_MAX)
+    {
+        return {-1, -1};
+    }
+
+    return {minDistance, lastCriticalPoint - firstCriticalPoint};
+}
+
 vector<int> nodesBetweenCriticalPoints(ListNode *head)
 {
 
