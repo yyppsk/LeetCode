@@ -36,15 +36,8 @@ ListNode *createLinkedList(const std::vector<int> &values)
 
 vector<int> nodesBetweenCriticalPoints(ListNode *head)
 {
-    int len = 0;
-    ListNode *ptr = head;
-    while (ptr != nullptr)
-    {
-        len++;
-        ptr = ptr->next;
-    }
 
-    if (len <= 2)
+    if (!head || !head->next || !head->next->next)
     {
         return {-1, -1};
     }
