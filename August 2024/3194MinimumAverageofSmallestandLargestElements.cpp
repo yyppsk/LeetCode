@@ -49,5 +49,5 @@ double minimumAveragePQ(vector<int> nums)
 
 int main()
 {
-    cout << minimumAverage({14, 3, 6, 4, 6, 7, 15, 13, 14, 5, 7, 13});
+    cout << minimumAveragePQ({14, 3, 6, 4, 6, 7, 15, 13, 14, 5, 7, 13});
 }
