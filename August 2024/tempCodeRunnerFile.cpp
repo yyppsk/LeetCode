@@ -1,2 +1,2 @@
 
-    unordered_map<char, pair<int, int>> delta;
+                if (almost_matching && sub1[k] != sub2[k])
