@@ -42,7 +42,7 @@ vector<string> wordSubsets(vector<string> &words1, vector<string> &words2)
     return result;
 }
 
-// Optimal
+// Optimal -- Super fast mutating the input
 vector<int> counter(string &word)
 {
     vector<int> count(26);
