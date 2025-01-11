@@ -42,7 +42,6 @@ vector<string> wordSubsets(vector<string> &words1, vector<string> &words2)
     return result;
 }
 
-// Optimal -- Super fast mutating the input
 vector<int> counter(string &word)
 {
     vector<int> count(26);
@@ -74,6 +73,55 @@ vector<string> wordSubsets(vector<string> &words1, vector<string> &words2)
     return res;
 }
 
+// Optimal -- Super fast mutating the input
+
+vector<string> wordSubsets(vector<string> &words1, vector<string> &words2)
+{
+    auto computeFrequencyArray = [](const string &word) -> array<int, 26>
+    {
+        array<int, 26> frequency = {};
+        for (char c : word)
+        {
+            ++frequency[c - 'a'];
+        }
+        return frequency;
+    };
+
+    array<int, 26> maxFrequencyRequirements = {};
+    for (const string &word : words2)
+    {
+        auto wordFrequency = computeFrequencyArray(word);
+        for (int i = 0; i < 26; ++i)
+        {
+            maxFrequencyRequirements[i] =
+                max(maxFrequencyRequirements[i], wordFrequency[i]);
+        }
+    }
+
+    vector<string> universalWords;
+    universalWords.reserve(words1.size());
+    for (const string &word : words1)
+    {
+        auto wordFrequency = computeFrequencyArray(word);
+
+        bool isUniversal = true;
+        for (int i = 0; i < 26; ++i)
+        {
+            if (wordFrequency[i] < maxFrequencyRequirements[i])
+            {
+                isUniversal = false;
+                break;
+            }
+        }
+
+        if (isUniversal)
+        {
+            universalWords.push_back(std::move(word));
+        }
+    }
+
+    return universalWords;
+}
 int main()
 {
     vector<string> words1 = {"amazon", "apple", "facebook", "google", "leetcode"}, words2 = {"l", "e"};
