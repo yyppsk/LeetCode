@@ -27,6 +27,34 @@ int minimumLength(string s)
 
     return answer;
 }
+
+// optimal for deletion
+
+int minimumLength(string s)
+{
+    unordered_map<char, int> charFrequencyMap;
+
+    for (char &ch : s)
+    {
+        charFrequencyMap[ch]++;
+    }
+
+    int deleteCount = 0;
+    for (auto &pair : charFrequencyMap)
+    {
+        int frequency = pair.second;
+        if (frequency % 2 == 1)
+        {
+            deleteCount += frequency - 1;
+        }
+        else
+        {
+            deleteCount += frequency - 2;
+        }
+    }
+
+    return s.length() - deleteCount;
+}
 int main()
 {
     string s = "abaacbcbb";
