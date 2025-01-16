@@ -1,7 +1,7 @@
 #include <bits/bits-stdc++.h>
 using namespace std;
 
-// TLE
+// TLE solution
 int xorAllNums(vector<int> &nums1, vector<int> &nums2)
 {
     unordered_set<int> s1, s2;
