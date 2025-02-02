@@ -2,11 +2,11 @@ import random
 
 def generate_test_case():
     # Define the size of the arrays
-    size = 10**5
+    size = 100
 
     # Define the range of numbers
-    min_value = 0
-    max_value = 1
+    min_value = 1
+    max_value = 100
 
     # Generate the two arrays
     nums1 = [random.randint(min_value, max_value) for _ in range(size)]
